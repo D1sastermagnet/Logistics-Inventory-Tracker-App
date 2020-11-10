@@ -1,4 +1,7 @@
+<img src="C:\Users\jxion\Documents\Brainhack 2020\LIT For Github\screenshots\Logo\LIT Logo.png" alt="LIT Logo" style="zoom:48%;" />
+
 ## LIT: the Logistics Inventory Tracker
+
 *Note: The build no longer works as the AWS environment is no longer active. This repository is for archiving and display purposes only.*
 
 The Logistics Inventory Tracker (LIT) is a mobile application that aims to mitigate the risk of infectious disease transmission and strain on supermarket logistics induced by "panic buying" at times of health crises by allowing users to check the availability of items at nearby grocers.
