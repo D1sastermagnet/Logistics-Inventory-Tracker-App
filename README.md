@@ -1,4 +1,4 @@
-<img src="screenshots\Logo\LIT Logo.png" alt="LIT Logo" style="zoom:20%;" />
+![LIT Logo](screenshots\Logo\LIT Logo.png)
 
 ## LIT: the Logistics Inventory Tracker
 
