@@ -1,4 +1,4 @@
-<img src="C:\Users\jxion\Documents\Brainhack 2020\LIT For Github\screenshots\Logo\LIT Logo.png" alt="LIT Logo" style="zoom:48%;" />
+<img src="screenshots\Logo\LIT Logo.png" alt="LIT Logo" style="zoom:48%;" />
 
 ## LIT: the Logistics Inventory Tracker
 
