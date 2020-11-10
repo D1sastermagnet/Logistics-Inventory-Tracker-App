@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIT : Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<style>
+
+body {
+  font-family: Verdana;
+  text-align:center;
+  margin-left:10%;
+  margin-right:10%;
+  max-width: 80%;
+  background-color: #fafafa;
+}
+
+
+.main input[type=text] {
+  padding: 6px;
+  border: 1px solid #ccc; 
+  font-size: 16px;
+  max-width:100%;
+}
+
+.main a {
+  float:right;
+  margin-left:4px;
+  padding: 5px 15px;
+  max-width:10%;
+  border: 1px solid #ccc; 
+  background-color: #ffaa00;
+  color:white;
+  transition: all 0.3s ease;
+  border-radius:5px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display:none;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #ffaa00;
+  color: white;
+  opacity:0.9;
+}
+
+#myUL li a:active {
+  background-color: #ffaa00;
+  color: white;
+}
+
+
+footer {
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index: 1;
+  max-width:80%;
+  margin-left:10%;
+}
+
+
+.foot {
+  margin-bottom: 5%;
+  max-width:80%;
+  float:left;
+}
+
+
+.button {
+  width:100%;
+  border: 1px solid #ccc; 
+  padding: 10px 70px;
+  background-color: #ffaa00;
+  color:white;
+  text-decoration:none;
+  font-family:Verdana;
+  font-size:4vw;
+  font-weight:bold;
+  transition: all 0.3s ease;
+}
+
+
+
+
+</style>
+
+<script type="text/javascript" src = "js/LIT js.js"></script>
+<!--script src="https://sdk.amazonaws.com/js/aws-sdk-SDK_VERSION_NUMBER.min.js"></script-->
+</head>
+  
+<header>
+  <a href="index.html"><img src="img/title.png" alt="title" style="width:100px;height:50px;"></a>
+  <hr>
+</header>
+
+<body style="font-family:Verdana;color:#ffaa00;" onload="loadStores()">
+
+
+<div class="main" style="margin-top:30%;">
+  <h1 style="margin-bottom:0;"><b>SELECT STORE</b></h1>
+  <br>
+  <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Select Store..">
+</div>
+<div>
+  <br>
+  <br>
+  <ul id="myUL"><!--REMOVED
+    <li><a href="search.html">Fairprice Finést, Junction 8</a></li>
+    <li><a href="search.html">Giant Supermarket, <br>512 Bishan St 13</a></li>
+    <li><a href="search.html">Tian Ma Group, <br>513 Bishan St 13</a></li>-->
+  </ul>
+</div>
+
+
+<!--9 Bishan Pl, #B1-01, S579837-->
+<!--512 Bishan St 13, #01, S570512-->
+<!--513 Bishan St 13, #01, S570513-->
+
+
+<footer class="foot">
+
+</footer>
+
+<script>
+function loadStores(){
+  searchStore();
+  document.getElementById("myUL").style.display = "none";
+}
+
+function filterFunction() {
+    document.getElementById("myUL").style.display = "block";
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+</body>
+</html>

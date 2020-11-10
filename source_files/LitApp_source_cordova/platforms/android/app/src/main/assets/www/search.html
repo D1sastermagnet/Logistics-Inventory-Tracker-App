@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIT : Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#itemSearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".card *").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+
+<style>
+
+body {
+  font-family: Verdana;
+  text-align:center;
+  margin-left:10%;
+  margin-right:10%;
+  max-width: 80%;
+  background-color: #fafafa;
+  color:#333333;
+  font-family:Verdana;
+}
+
+
+.main input[type=text] {
+  padding: 6px;
+  border: 1px solid #ccc; 
+  font-size: 16px;
+  max-width:100%;
+  margin-bottom:5px;
+}
+
+.main a {
+  margin-left:4px;
+  padding: 4px 15px; 
+  border: 1px solid #ccc;
+  color:black;
+  transition: all 0.3s ease;
+}
+
+.card{
+  clear:both;
+  margin-top:10px;
+  max-width:93%;
+  text-align:left;
+  color:black;
+  text-decoration:none;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border: 1px solid #ccc; 
+}
+
+.plus {
+  float:left;
+  display:inline;
+  padding: 5px;
+  max-width:10%;
+  border: 1px solid #ccc; 
+  background-color: #ffaa00;
+  color:white;
+  transition: all 0.3s ease;
+}
+
+.phead{
+  font-weight:bold;
+  font-size:4vw;
+  margin-bottom:2px;
+}  
+
+.pcontent{
+  font-size:3vw;
+  margin-top:0;
+  margin-bottom:0;
+}  
+
+.button {
+  width:100%;
+  border: 1px solid #ccc; 
+  background-color: #ffaa00;
+  color:white;
+  text-decoration:none;
+  font-family:Verdana;
+  font-size:3vw;
+  font-weight:bold;
+  transition: all 0.3s ease;
+  font-size:3vw;
+  margin-top:10px;
+  padding: 5px 0px;
+}
+
+
+footer {
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index: 1;
+  width:100%;
+  background-color: #ffaa00;
+  padding: 8px 0px;
+}
+
+
+.foot {
+  max-width: 100%;
+  background-color: #ffaa00;
+  overflow: auto;
+}
+
+.foot a {
+  float: left;
+  width: 49%;
+  text-align: center;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 4vw;
+  background-color:#ffaa00;
+  
+}
+
+
+.ftbutton {
+  padding: 10px 65px;
+  color:white;
+  text-decoration:none;
+  font-family:Verdana;
+  font-size:4vw;
+  font-weight:bold;
+  transition: all 0.3s ease;
+}
+
+
+
+#itemSearch {
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 4px 20px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#itemSearch:focus {outline: 3px solid #ddd;}
+
+.search {
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+}
+
+
+
+</style>
+
+<script type="text/javascript" src = "js/LIT js.js"></script>
+<!--script src="https://sdk.amazonaws.com/js/aws-sdk-SDK_VERSION_NUMBER.min.js"></script-->
+</head>
+  
+<header>
+  <a href="index.html"><img src="img/title.png" alt="title" style="width:100px;height:50px;"></a>
+  <hr>
+</header>
+
+<body onload="locationUpdate(); restoreMain();">
+
+
+<div class="main">
+  <br>
+  <h2 id="locale" style="margin-top:0;">XXX LOCATION</h2>
+  <div id="myDropdown" class="search">
+    <input type="text" placeholder="Search.." id="itemSearch">
+  </div>
+  <a style="float:right;background-color: #ffaa00;color:white;" onclick="searchProductsMain();"><i class="fa fa-search"></i></a>
+  <br>
+</div>
+<hr style="margin-top:30px;">
+<div id="productCardContainer">
+  <!--
+<div class="card">
+<section>
+  <span class="phead"> Marigold Cream UHT Milk</span>
+  <button onclick="moreDetails()" class="plus" style="float:right;"><i class="fa fa-plus"></i></button>
+  <p class="pcontent"> Next Stock Arriving: 7 Jun</p>
+  <span id="color" style="padding:10px;border:1px solid #ccc;float:right;"> </span>
+</section>
+<section id="toggle" style="display:none;margin-top:2px;">
+  <p class="pcontent"> Price: $10.90</p>
+  <p class="pcontent"> Qty: 24 x 200 ml (CTN)</p>
+</section>
+  <button class="button" style="font-size:3vw;padding:5px 100px;margin-top:10px;">Add to Cart</button>
+</div>-->
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<footer class="foot">
+  <a href="nearby.html" class="ftbutton" style="border-right:1px solid #aaa;">Other Locations</a>
+  <a href="cart.html" class="ftbutton">View Shopping Cart</a>
+</footer>
+
+<script>
+
+function moreDetails() {
+  var x = document.getElementById("toggle");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+</script>
+
+
+</body>
+</html>

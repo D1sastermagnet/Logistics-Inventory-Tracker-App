@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIT : Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+body {
+  font-family: Verdana;
+  text-align:center;
+  margin-left:10%;
+  margin-right:10%;
+  max-width: 80%;
+  background-color: #fafafa;
+  font-family:Verdana;
+  color:#333333;
+}
+
+h3 {
+  text-align:left;
+  margin-top:20px;
+  margin-bottom:0;
+}
+
+p {
+  text-align:left;
+  margin-top:0;
+}
+
+.card{
+  clear:both;
+  margin-top:10px;
+  max-width:93%;
+  text-align:left;
+  color:#333333;
+  text-decoration:none;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border: 1px solid #ccc; 
+}
+
+.plus {
+  float:left;
+  display:inline;
+  padding: 5px;
+  max-width:10%;
+  border: 1px solid #ccc; 
+  background-color: #ffaa00;
+  color:white;
+  transition: all 0.3s ease;
+}
+
+.phead{
+  font-weight:bold;
+  font-size:4vw;
+  margin-bottom:2px;
+}  
+
+.pcontent{
+  font-size:3vw;
+  margin-top:0;
+  margin-bottom:0;
+}  
+
+.button {
+  width:100%;
+  border: 1px solid #ccc; 
+  background-color: #ffaa00;
+  color:white;
+  text-decoration:none;
+  font-family:Verdana;
+  font-size:3vw;
+  font-weight:bold;
+  transition: all 0.3s ease;
+  font-size:3vw;
+  margin-top:10px;
+  padding: 5px 0px;
+}
+
+
+footer {
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index: 1;
+  width:100%;
+  background-color: #ffaa00;
+  padding: 15px 0px;
+}
+
+
+.ftbutton {
+  padding: 10px 65px;
+  background-color: #ffaa00;
+  color:white;
+  text-decoration:none;
+  font-family:Verdana;
+  font-size:4vw;
+  font-weight:bold;
+  transition: all 0.3s ease;
+}
+
+</style>
+
+<script type="text/javascript" src = "js/LIT js.js"></script>
+<!--script src="https://sdk.amazonaws.com/js/aws-sdk-SDK_VERSION_NUMBER.min.js"></script-->
+</head>
+  
+<header>
+  <a href="index.html"><img src="img/title.png" alt="title" style="width:100px;height:50px;"></a>
+  <hr>
+</header>
+
+<body onload="buildCart();">
+
+
+<div class="main">
+  <br>
+  <h2 style="margin-top:0;">YOUR SHOPPING CART</h2>
+  </div>
+</div>
+
+<div id="shoppingCart">
+<div>
+  <h3 id="location1Header"></h3>
+  <p id="location1Address"></p>
+</div>
+<div class="cardContainer" id="location1Cart">
+  <!--
+<div class="card">
+<section>
+  <span class="phead"> Marigold Cream UHT Milk</span>
+  <button onclick="moreDetails()" class="plus" style="float:right;"><i class="fa fa-plus"></i></button>
+  <p class="pcontent"> Next Stock Arriving: 7 Jun</p>
+  <span id="color" style="padding:10px;border:1px solid #ccc;float:right;"> </span>
+</section>
+<section id="toggle" style="display:none;margin-top:2px;">
+  <p class="pcontent"> Price: $10.90</p>
+  <p class="pcontent"> Qty: 24 x 200 ml (CTN)</p>
+</section>
+  <button class="button">Delete</button>
+</div>
+<div class="card">
+<section>
+  <span class="phead"> Marigold Cream UHT Milk</span>
+  <button onclick="moreDetails()" class="plus" style="float:right;"><i class="fa fa-plus"></i></button>
+  <p class="pcontent"> Next Stock Arriving: 7 Jun</p>
+  <span id="color" style="padding:10px;border:1px solid #ccc;float:right;"> </span>
+</section>
+<section id="toggle" style="display:none;margin-top:2px;">
+  <p class="pcontent"> Price: $10.90</p>
+  <p class="pcontent"> Qty: 24 x 200 ml (CTN)</p>
+</section>
+  <button class="button" style="">Delete</button>
+</div>-->
+</div>
+
+<div>
+  <h3 id="location2Header"></h3>
+  <p id="location2Address"></p>
+</div>
+<div class="cardContainer" id="location2Cart"><!--
+<div class="card">
+<section>
+  <span class="phead"> Marigold Cream UHT Milk</span>
+  <button onclick="moreDetails()" class="plus" style="float:right;"><i class="fa fa-plus"></i></button>
+  <p class="pcontent"> Next Stock Arriving: 7 Jun</p>
+  <span id="color" style="padding:10px;border:1px solid #ccc;float:right;"> </span>
+</section>
+<section id="toggle" style="display:none;margin-top:2px;">
+  <p class="pcontent"> Price: $10.90</p>
+  <p class="pcontent"> Qty: 24 x 200 ml (CTN)</p>
+</section>
+  <button class="button">Delete</button>
+</div>-->
+</div>
+
+<div>
+  <h3 id="location3Header"></h3>
+  <p id="location3Address"></p>
+</div>
+<div class="cardContainer" id="location3Cart"><!--
+<div class="card">
+<section>
+  <span class="phead"> Marigold Cream UHT Milk</span>
+  <button onclick="moreDetails()" class="plus" style="float:right;"><i class="fa fa-plus"></i></button>
+  <p class="pcontent"> Next Stock Arriving: 7 Jun</p>
+  <span id="color" style="padding:10px;border:1px solid #ccc;float:right;"> </span>
+</section>
+<section id="toggle" style="display:none;margin-top:2px;">
+  <p class="pcontent"> Price: $10.90</p>
+  <p class="pcontent"> Qty: 24 x 200 ml (CTN)</p>
+</section>
+  <button class="button" style="">Delete</button>
+</div>
+</div>-->
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<footer style="overflow:auto">
+  <a href="search.html" class="ftbutton">Back to Search</a>
+</footer>
+
+</body>
+<script>
+function stockColor() {
+  var qty=40, maxqty=100;
+  var percent=qty/maxqty;
+  if (percent>=0.5) {
+    document.getElementById("color").style.backgroundColor = "green";
+  } else if (percent>0.2 && percent<0.5) {
+    document.getElementById("color").style.backgroundColor = "yellow";
+  } else if (percent<0.2) {
+    document.getElementById("color").style.backgroundColor = "red";
+}
+}
+
+function moreDetails(elementID) {
+  var x = document.getElementById(elementID);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+</script>
+
+
+
+</html>

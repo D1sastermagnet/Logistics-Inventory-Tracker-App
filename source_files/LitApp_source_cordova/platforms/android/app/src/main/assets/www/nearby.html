@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIT : Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+body {
+  font-family: Verdana;
+  text-align:center;
+  margin-left:10%;
+  margin-right:10%;
+  max-width: 80%;
+  background-color: #fafafa;
+  color:#333333;
+  font-family:Verdana;
+}
+
+.card{
+  clear:both;
+  margin-top:10px;
+  max-width:93%;
+  text-align:left;
+  color:#333333;
+  text-decoration:none;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border: 1px solid #ccc; 
+}
+
+.plus {
+  float:left;
+  display:inline;
+  padding: 5px;
+  max-width:10%;
+  border: 1px solid #ccc; 
+  background-color: #ffaa00;
+  color:white;
+  transition: all 0.3s ease;
+}
+
+.phead{
+  font-weight:bold;
+  font-size:4vw;
+  margin-bottom:2px;
+}  
+
+.pcontent{
+  font-size:3vw;
+  margin-top:0;
+  margin-bottom:0;
+}  
+
+.button {
+  width:100%;
+  border: 1px solid #ccc; 
+  padding: 10px 70px;
+  background-color: #ffaa00;
+  color:white;
+  text-decoration:none;
+  font-family:Verdana;
+  font-size:4vw;
+  font-weight:bold;
+  transition: all 0.3s ease;
+}
+
+footer {
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index: 1;
+  width:100%;
+  background-color: #ffaa00;
+  padding: 8px 0px;
+}
+
+
+.foot {
+  max-width: 100%;
+  background-color: #ffaa00;
+  overflow: auto;
+}
+
+.foot a {
+  float: left;
+  width: 49%;
+  text-align: center;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 4vw;
+  background-color:#ffaa00;
+  
+}
+
+.ftbutton {
+  padding: 10px 65px;
+  color:white;
+  text-decoration:none;
+  font-family:Verdana;
+  font-size:4vw;
+  font-weight:bold;
+  transition: all 0.3s ease;
+}
+
+
+</style>
+<script type="text/javascript" src = "js/LIT js.js"></script>
+<!--script src="https://sdk.amazonaws.com/js/aws-sdk-SDK_VERSION_NUMBER.min.js"></script-->
+</head>
+  
+<header>
+  <a href="index.html"><img src="img/title.png" alt="title" style="width:100px;height:50px;"></a>
+  <hr>
+</header>
+
+<body onload="checkSearchTermNear();">
+
+
+<div class="main">
+  <br>
+  <h2 style="margin-top:0;">ALSO NEAR YOU...</h2>
+  
+</div>
+<div id="productCardContainerNear">
+  <!--
+<div class="card">
+<section>
+  <span class="phead"> Marigold Cream UHT Milk</span>
+  <button onclick="moreDetails()" class="plus" style="float:right;"><i class="fa fa-plus"></i></button>
+  <p class="pcontent"> YYY Location</p>
+  <span id="color" style="padding:10px;border:1px solid #ccc;float:right;"> </span>
+  <p class="pcontent"> Next Stock Arriving: 7 Jun</p>
+</section>
+<section id="toggle" style="display:none;margin-top:2px;">
+  <p class="pcontent"> Price: $10.90</p>
+  <p class="pcontent"> Qty: 24 x 200 ml (CTN)</p>
+</section>
+  <button class="button" style="font-size:3vw;padding:5px 100px;margin-top:10px;">Add to Cart</button>
+</div>-->
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<footer class="foot">
+  <a href="search.html" class="ftbutton" style="border-right:1px solid #aaa;">Back to Search</a>
+  <a href="cart.html" class="ftbutton">View Shopping Cart</a>
+</footer>
+
+<script>
+function stockColor() {
+  var qty=40, maxqty=100;
+  var percent=qty/maxqty;
+  if (percent>=0.5) {
+    document.getElementById("color").style.backgroundColor = "green";
+  } else if (percent>0.2 && percent<0.5) {
+    document.getElementById("color").style.backgroundColor = "yellow";
+  } else if (percent<0.2) {
+    document.getElementById("color").style.backgroundColor = "red";
+}
+}
+
+function moreDetails() {
+  var x = document.getElementById("toggle");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+</script>
+
+
+</body>
+</html>
