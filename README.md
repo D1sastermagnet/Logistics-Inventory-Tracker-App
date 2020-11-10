@@ -8,9 +8,6 @@ The Logistics Inventory Tracker (LIT) was conceived and created for the DSTA Bra
 
 **Our Problem Statement:** Mass buying of essentials, or “panic buying”, as a result of a health crisis increases the risk of transmission due to overcrowding and places undue pressure on the logistics of essential items, especially in supermarkets, reducing the resilience of the community’s health and logistics.
 
-## Build Status
-On Hold.
-
 ## Screenshots
 *These screenshots are from an earlier build and with a smaller database.*
 
@@ -56,6 +53,10 @@ When the user goes to the store, they can pull up their saved items within their
 This application was first written as a web app (using HTML, CSS and Javascript) before being built for the Android 10.0 Operating System in Apache Cordova.
 
 The application uses a RESTful API, sending an AJAX request to PHP files hosted on AWS Elastic Beanstalk to access a database hosted on AWS Relational Database Service.
+
+## Build Status
+
+On Hold.
 
 ## Navigating the Repository
 The APK of the application can be found in main folder, named `LIT.apk`.
